@@ -108,9 +108,17 @@ table.directory td{
 }
 table.directory tr:last-child td{ border-bottom:none; }
 table.directory td.case-no{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-soft); white-space:nowrap; }
-table.directory td.title a{ font-family:'Fraunces', serif; font-weight:600; font-size:17px; color:var(--ink); border:none; }
-table.directory td.title a:hover{ color:var(--stamp); }
+table.directory td.title a{ font-family:'Fraunces', serif; font-weight:600; font-size:17px; color:var(--ink); border-bottom:1px solid rgba(32,29,22,0.32); padding-bottom:1px; }
+table.directory td.title a:hover, table.directory td.title a:active{ color:var(--stamp); border-bottom-color:var(--stamp); }
 table.directory td.title .sub{ display:block; font-size:13px; color:var(--ink-soft); margin-top:4px; font-family:'IBM Plex Sans', sans-serif; }
+table.directory td.title .open-hint{
+  display:inline-flex; align-items:center; gap:5px;
+  margin-top:8px; font-family:'IBM Plex Mono', monospace; font-size:11px;
+  text-transform:uppercase; letter-spacing:0.06em; color:var(--teal);
+}
+table.directory tbody tr{ cursor:pointer; transition:background-color .15s ease; }
+table.directory tbody tr:hover{ background-color:#e0d5b3; }
+table.directory tbody tr:active{ background-color:#d6c89e; }
 table.directory td.status{ font-family:'IBM Plex Mono',monospace; font-size:11px; white-space:nowrap; }
 .status-tag{ padding:3px 8px; border:1px solid var(--stamp); color:var(--stamp); border-radius:2px; }
 

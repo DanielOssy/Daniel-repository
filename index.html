@@ -46,21 +46,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr data-href="case-file-01.html">
           <td class="case-no">RA–01</td>
-          <td class="title"><a href="case-file-01.html">Operational Scheduling Efficiency Review</a><span class="sub">Structured data analysis, process bottleneck identification, recommendation memo</span></td>
+          <td class="title"><a href="case-file-01.html">Operational Scheduling Efficiency Review</a><span class="sub">Structured data analysis, process bottleneck identification, recommendation memo</span><span class="open-hint">Open case file &rarr;</span></td>
           <td>Research &amp; Analysis</td>
           <td class="status"><span class="status-tag">Closed</span></td>
         </tr>
-        <tr>
+        <tr data-href="case-file-02.html">
           <td class="case-no">RC–02</td>
-          <td class="title"><a href="case-file-02.html">Interdepartmental Coordination Report</a><span class="sub">Formal reporting, institutional correspondence, multi-department input synthesis</span></td>
+          <td class="title"><a href="case-file-02.html">Interdepartmental Coordination Report</a><span class="sub">Formal reporting, institutional correspondence, multi-department input synthesis</span><span class="open-hint">Open case file &rarr;</span></td>
           <td>Research Communication</td>
           <td class="status"><span class="status-tag">Closed</span></td>
         </tr>
-        <tr>
+        <tr data-href="case-file-03.html">
           <td class="case-no">RO–03</td>
-          <td class="title"><a href="case-file-03.html">Onboarding &amp; SOP Documentation Set</a><span class="sub">Process breakdown for non-technical staff, SOP authoring, records structuring</span></td>
+          <td class="title"><a href="case-file-03.html">Onboarding &amp; SOP Documentation Set</a><span class="sub">Process breakdown for non-technical staff, SOP authoring, records structuring</span><span class="open-hint">Open case file &rarr;</span></td>
           <td>Research Operations</td>
           <td class="status"><span class="status-tag">Closed</span></td>
         </tr>
@@ -171,5 +171,13 @@
   </div>
 </footer>
 
+<script>
+document.querySelectorAll('table.directory tbody tr[data-href]').forEach(function(row){
+  row.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') return; // let the link handle its own click
+    window.location.href = row.dataset.href;
+  });
+});
+</script>
 </body>
 </html>
